@@ -10,6 +10,7 @@ import Foundation
 protocol ListCarView {
     func displayLoading(message: String)
     func dismissLoading()
+    func showFailed(message: String)
     func showListCar(listCar : [Car])
 }
 
@@ -34,9 +35,8 @@ class ListCarPresenter{
             case.done(value: let result):
                 self.viewListCar?.showListCar(listCar: result)
                 break
-            case .onProgress(let progress):
-                break
             case .failed(let message):
+                self.viewListCar?.showFailed(message: message)
                 break
             }
         }

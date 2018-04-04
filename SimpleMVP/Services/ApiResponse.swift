@@ -13,7 +13,6 @@ import SwiftyJSON
 
 public enum RequestResult<T>{
     case done(T)
-    case onProgress(progress: Double)
     case failed(message: String)
 }
 

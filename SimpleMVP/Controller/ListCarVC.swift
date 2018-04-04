@@ -12,6 +12,8 @@ class ListCarVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var presenter : ListCarPresenter = ListCarPresenter()
     var cars : [Car] = [Car]()
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var viewLoading: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cars"
@@ -27,12 +29,20 @@ class ListCarVC: UIViewController {
 }
 
 extension ListCarVC  : ListCarView {
+    func showFailed(message: String) {
+        print("error : \(message)")
+    }
+    
     func displayLoading(message: String) {
-        
+        viewLoading.isHidden = false
+        indicatorView.startAnimating()
+        tableView.isHidden = true
     }
     
     func dismissLoading() {
-        
+        viewLoading.isHidden = true
+        indicatorView.stopAnimating()
+        tableView.isHidden = false
     }
     
     func showListCar(listCar: [Car]) {
