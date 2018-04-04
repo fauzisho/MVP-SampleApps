@@ -23,6 +23,9 @@
 		2D7C04D62073DF4900846805 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C04D52073DF4900846805 /* ApiResponse.swift */; };
 		2D7C04D92073E73C00846805 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C04D72073E73C00846805 /* CarCell.swift */; };
 		2D7C04DA2073E73C00846805 /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C04D82073E73C00846805 /* CarCell.xib */; };
+		2D9009202075300900DEC00F /* CarDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90091E2075300900DEC00F /* CarDetailVC.swift */; };
+		2D9009212075300900DEC00F /* CarDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D90091F2075300900DEC00F /* CarDetailVC.xib */; };
+		2D900924207536C300DEC00F /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D900923207536C300DEC00F /* DeleteButton.swift */; };
 		41A7470917190D8596FDE515 /* Pods_SimpleMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4801566352DE2BFA95831903 /* Pods_SimpleMVP.framework */; };
 		6D05E16E3A588EA69F5428AA /* Pods_SimpleMVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A858D5C41915710D6A78C8D8 /* Pods_SimpleMVPTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		2D7C04D52073DF4900846805 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		2D7C04D72073E73C00846805 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		2D7C04D82073E73C00846805 /* CarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
+		2D90091E2075300900DEC00F /* CarDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailVC.swift; sourceTree = "<group>"; };
+		2D90091F2075300900DEC00F /* CarDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailVC.xib; sourceTree = "<group>"; };
+		2D900923207536C300DEC00F /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		44B7453D4CA5174A0B6E42FE /* Pods_SimpleMVPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMVPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4801566352DE2BFA95831903 /* Pods_SimpleMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4910386B2DE3F752FAF1A39C /* Pods-SimpleMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMVP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMVP/Pods-SimpleMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		2D7C04962073D40900846805 /* SimpleMVP */ = {
 			isa = PBXGroup;
 			children = (
+				2D900922207536A300DEC00F /* Extension */,
 				2D7C04D02073DA0900846805 /* Model */,
 				2D7C04CF2073D9C900846805 /* Services */,
 				2D7C04CE2073D9C100846805 /* Controller */,
@@ -164,11 +171,12 @@
 		2D7C04CE2073D9C100846805 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2D90091D20752E5000DEC00F /* Cell */,
 				2D7C04C62073D69B00846805 /* ListCarVC.swift */,
 				2D7C04C72073D69B00846805 /* ListCarVC.xib */,
 				2D7C04CB2073D8AE00846805 /* ListCarPresenter.swift */,
-				2D7C04D72073E73C00846805 /* CarCell.swift */,
-				2D7C04D82073E73C00846805 /* CarCell.xib */,
+				2D90091E2075300900DEC00F /* CarDetailVC.swift */,
+				2D90091F2075300900DEC00F /* CarDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +196,23 @@
 				2D7C04D12073DA2F00846805 /* Car.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2D90091D20752E5000DEC00F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2D7C04D72073E73C00846805 /* CarCell.swift */,
+				2D7C04D82073E73C00846805 /* CarCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2D900922207536A300DEC00F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2D900923207536C300DEC00F /* DeleteButton.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A99DFD150175E161822E172E /* Frameworks */ = {
@@ -326,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9009212075300900DEC00F /* CarDetailVC.xib in Resources */,
 				2D7C04A22073D40A00846805 /* LaunchScreen.storyboard in Resources */,
 				2D7C04C92073D69B00846805 /* ListCarVC.xib in Resources */,
 				2D7C049F2073D40A00846805 /* Assets.xcassets in Resources */,
@@ -509,7 +535,9 @@
 			files = (
 				2D7C04D42073DCCB00846805 /* CarServices.swift in Sources */,
 				2D7C049A2073D40900846805 /* ViewController.swift in Sources */,
+				2D9009202075300900DEC00F /* CarDetailVC.swift in Sources */,
 				2D7C04982073D40900846805 /* AppDelegate.swift in Sources */,
+				2D900924207536C300DEC00F /* DeleteButton.swift in Sources */,
 				2D7C04D62073DF4900846805 /* ApiResponse.swift in Sources */,
 				2D7C04D22073DA2F00846805 /* Car.swift in Sources */,
 				2D7C04C82073D69B00846805 /* ListCarVC.swift in Sources */,

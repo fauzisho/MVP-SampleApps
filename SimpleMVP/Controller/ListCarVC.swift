@@ -19,11 +19,11 @@ class ListCarVC: UIViewController {
         self.title = "Cars"
         presenter.attachView(view: self)
         tableView.dataSource = self
+        tableView.delegate =  self
         tableView.register(CarCell.nib,
                            forCellReuseIdentifier: CarCell.identifier)
      
         presenter.getCars()
-        
         
     }
 }
@@ -62,7 +62,20 @@ extension ListCarVC : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: CarCell.identifier, for: indexPath) as! CarCell
         let data = self.cars[indexPath.row]
         cell.labelName.text = data.model
+        cell.buttonDelete.id  = data.id
+        cell.buttonDelete.addTarget(self, action: #selector(deleteTarget(_:)), for: .touchUpInside)
         return cell
-        
+    }
+    @objc func deleteTarget(_ delete : DeleteButton){
+        presenter.deleteCar(id: delete.id!)
+    }
+}
+
+extension ListCarVC : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let car = self.cars[indexPath.row]
+        let carDetail = CarDetailVC()
+        carDetail.car = car
+        self.navigationController?.pushViewController(carDetail, animated: true)
     }
 }

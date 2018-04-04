@@ -28,10 +28,25 @@ class CarService{
                     }
                     completion(RequestResult.done(listcar))
                 }else{
-                    
+                    completion(RequestResult.failed(message: status))
                 }
             }
         }
     }
     
+    func getCars(id : Int ,completion: @escaping (_ result: RequestResult<String>)-> Void){
+        Alamofire.request("\(BaseUrl)cars/\(id)", method: .delete)
+        .responseJSON { (response) in
+            if let result = response.result.value{
+                let json = JSON(result)
+                print("jsondelete:\(json)")
+                let status = json["status"].stringValue
+                if status == "success"{
+                    completion(RequestResult.done(status))
+                }else{
+                    completion(RequestResult.failed(message: status))
+                }
+            }
+        }
+    }
 }

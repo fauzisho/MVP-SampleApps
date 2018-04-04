@@ -30,12 +30,28 @@ class ListCarPresenter{
         viewListCar = nil
     }
     func getCars(){
+        self.viewListCar?.displayLoading(message: "Please wait..")
         service.getCars { (response) in
+            self.viewListCar?.dismissLoading()
             switch response{
             case.done(value: let result):
                 self.viewListCar?.showListCar(listCar: result)
                 break
             case .failed(let message):
+                self.viewListCar?.showFailed(message: message)
+                break
+            }
+        }
+    }
+    
+    func deleteCar(id : Int) {
+        self.viewListCar?.displayLoading(message: "Please wait..")
+        service.getCars(id: id) { (response) in
+            switch response{
+            case.done(value: let result):
+                self.getCars()
+                break
+            case.failed(let message):
                 self.viewListCar?.showFailed(message: message)
                 break
             }

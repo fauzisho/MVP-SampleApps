@@ -21,25 +21,37 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGs-AS-3jS">
-                        <rect key="frame" x="21" y="12" width="278" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="zp1-e7-gsK"/>
-                        </constraints>
+                        <rect key="frame" x="21" y="16" width="269" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx8-lU-bci" customClass="DeleteButton" customModule="SimpleMVP" customModuleProvider="target">
+                        <rect key="frame" x="295" y="13.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="JyW-HI-aPO"/>
+                            <constraint firstAttribute="width" constant="15" id="bsW-q3-mGV"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="delete"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GGs-AS-3jS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="QYt-vU-9hz"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GGs-AS-3jS" secondAttribute="trailing" constant="5" id="Shg-rZ-o11"/>
-                    <constraint firstItem="GGs-AS-3jS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i9c-Wa-7eg"/>
+                    <constraint firstItem="GGs-AS-3jS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="4Ax-jZ-T43"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GGs-AS-3jS" secondAttribute="bottom" constant="5" id="4k8-KD-YUR"/>
+                    <constraint firstAttribute="trailing" secondItem="nx8-lU-bci" secondAttribute="trailing" constant="10" id="FfZ-Bw-wOz"/>
+                    <constraint firstItem="GGs-AS-3jS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="KU7-8Y-GOE"/>
+                    <constraint firstItem="nx8-lU-bci" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zl2-vV-8lY"/>
+                    <constraint firstItem="nx8-lU-bci" firstAttribute="leading" secondItem="GGs-AS-3jS" secondAttribute="trailing" constant="5" id="lDq-UL-GOm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonDelete" destination="nx8-lU-bci" id="WZn-0Y-dJz"/>
                 <outlet property="labelName" destination="GGs-AS-3jS" id="ZAX-sj-4z5"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="delete" width="512" height="512"/>
+    </resources>
 </document>

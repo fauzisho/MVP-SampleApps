@@ -11,6 +11,8 @@ import UIKit
 class CarCell: UITableViewCell {
     
     @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var buttonDelete: DeleteButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
