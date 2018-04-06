@@ -14,6 +14,8 @@ class ListCarVC: UIViewController {
     var cars : [Car] = [Car]()
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var viewLoading: UIView!
+    @IBOutlet weak var addButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cars"
@@ -24,7 +26,15 @@ class ListCarVC: UIViewController {
                            forCellReuseIdentifier: CarCell.identifier)
      
         presenter.getCars()
-        
+        addButton.addTarget(self, action: #selector(addCarTarget(_:)), for: .touchUpInside)
+    }
+   @objc func addCarTarget(_ car : UIButton){
+    let addCarVC = AddCarVC()
+    self.navigationController?.pushViewController(addCarVC, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.getCars()
     }
 }
 
