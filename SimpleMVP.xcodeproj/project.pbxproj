@@ -177,11 +177,10 @@
 		2D7C04CE2073D9C100846805 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2D90092E20784D3000DEC00F /* CarDetail */,
 				2D90092B2077994B00DEC00F /* AddCar */,
 				2D90092A2077990800DEC00F /* ListCar */,
 				2D90091D20752E5000DEC00F /* Cell */,
-				2D90091E2075300900DEC00F /* CarDetailVC.swift */,
-				2D90091F2075300900DEC00F /* CarDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +237,15 @@
 				2D90092C2077996700DEC00F /* AddCarPresenter.swift */,
 			);
 			path = AddCar;
+			sourceTree = "<group>";
+		};
+		2D90092E20784D3000DEC00F /* CarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D90091E2075300900DEC00F /* CarDetailVC.swift */,
+				2D90091F2075300900DEC00F /* CarDetailVC.xib */,
+			);
+			path = CarDetail;
 			sourceTree = "<group>";
 		};
 		A99DFD150175E161822E172E /* Frameworks */ = {
